@@ -12,6 +12,7 @@ import (
 	"math"
 	"math/big"
 
+	"github.com/xlcetc/cryptogm/elliptic/sm2curve"
 	"github.com/xlcetc/cryptogm/sm/sm3"
 )
 
@@ -375,7 +376,6 @@ func pointFromBytes(buf []byte) (x, y *big.Int) {
 	return
 }
 
-/*
 func init() {
 	c := sm2curve.P256()
 	var i int64 = 2
@@ -388,12 +388,12 @@ func init() {
 
 	T1[c.Params().Gx.String()] = 1
 	for ; i <= 16777216; i++ {
-		fmt.Printf("%d\n", i)
+		// fmt.Printf("%d\n", i)
 		x, y = c.Add(x, y, c.Params().Gx, c.Params().Gy)
 		T1[x.String()] = i
-		if i == 44 {
-			fmt.Println(x.String())
-		}
+		// if i == 44 {
+		// 	fmt.Println(x.String())
+		// }
 	}
 	var j int64 = 0
 	//t1lastx, t1lasty := c.ScalarMult(c.Gx, c.Gy, big.NewInt(4096).Bytes())
@@ -412,4 +412,3 @@ func init() {
 		//fmt.Println(T2y[j])
 	}
 }
-*/
